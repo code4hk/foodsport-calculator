@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+<script src="./node_modules/react/dist/react-with-addons.js"></script>
+<title><%= htmlWebpackPlugin.options.title || htmlWebpackPlugin.options.pkg.name %></title>
+<% if (htmlWebpackPlugin.files.favicon) { %>
+<link rel="shortcut icon" href="<%= htmlWebpackPlugin.files.favicon %>">
+<% } %>
+<style>
+  html {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+   }
+
+#enter{
+  text-align: center;
+  height:800px;
+}
+#enter {
+  padding:10em 0 10em 0;
+}
+
+#enter .vs-title h3{
+  font-family: PingFangTC-Semibold;
+  font-size: 49.22px;
+  color: #4A4A4A;
+  line-height: 69px;
+}
+
+#enter .vs-title h4{
+  font-family: PingFangTC-Semibold;
+  font-size: 32.72px;
+  color: #4A4A4A;
+  line-height: 46px;
+  /* The document: */
+  font-family: AvenirNext-Regular;
+  font-size: 21.95px;
+  color: #4A4A4A;
+  line-height: 30px;
+
+}
+
+#thumbnail {
+  height:20em;
+}
+
+#thumbnail a img {
+    display : block;
+    margin : auto;
+}
+
+#result img {
+  width: 100%
+}
+
+/* Button Background: */
+.check {
+  background-image: linear-gradient(-180deg, #FF8A8D 100%, #B3B3B3 100%);
+  /*border: 1px solid #979797;*/
+  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.20), inset 0px 2px 0px 0px #FFFFFF;
+  /*border-radius: 6px;*/
+  /* OK: */
+  font-family: PingFangTC-Medium;
+  font-size: 24.39px;
+  color: #FFFFFF;
+  line-height: 34px;
+}
+
+#result .desc{
+  font-family: PingFangTC-Ultralight;
+  position: absolute;
+  color:white;
+  font-weight: 600;
+}
+
+#result .desc .details{
+  font-size: 3em;
+}
+
+#result .result-container .desc{
+  padding:0 0 0 5em;
+}
+
+
+#athlete-title{
+  font-family: PingFangTC-Ultralight;
+  font-size: 14em;
+  color: #FFFFFF;
+  line-height: 90px;
+  font-weight: 100;
+}
+
+</style>
+<body >
+  <!-- <div id="example"></div> -->
+  <section id="enter">
+    <div id="thumbnail" >
+      <a href="#">
+          <!--image here-->
+          <img src="img/fs_ckh.jpg" height="100%" alt="artist" />
+      </a>
+    </div>
+    <div class="vs-title">
+      <h3>你 vs 陳家豪</h4>
+      <h4>陳家豪幾耐就消耗你上星期的卡路里？</h5>
+    </div>
+
+    <a href="#result"> <button type="button" class="check">睇結果</button></a>
+  </section>
+
+  <section id="result" >
+    <div id="result-container" class="result-container">
+          <!--image here-->
+          <div class="desc">
+            <h2 id="athlete-title">陳家豪</h2>
+            <div class="details">
+              <p>
+                只需要做...
+              </p>
+              <p>3 分鐘運動</p>
+                <p>
+                  就消耗你上星期的卡路里
+                </p>
+                    <!-- <a href="#result"> <button type="button" >你都可以XXX</button></a> -->
+            </div>
+
+        </div>
+          <img src="img/athlete_ckh.jpg" height="100%" alt="artist"  />
+    </div>
+  </section>
+
+  <section>
+    <img src="athlete_ckh.jpg"></img>
+  </section>
+  Testing
+</body>
+</html>
