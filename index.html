@@ -5,132 +5,326 @@
 <script src="./node_modules/react/dist/react-with-addons.js"></script>
 <title>Webpack App</title>
 
-<style>
+  <style>
   html {
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
-   }
+  }
+  body{
+    margin:0;
+  }
+  #enter{
+    text-align: center;
+    min-height: 100vh;
+    padding:10vh 0 10vh 0;
+  }
 
-#enter{
-  text-align: center;
-  height:800px;
-}
-#enter {
-  padding:10em 0 10em 0;
-}
+  #enter .vs-title h3{
+    font-family: PingFangTC-Semibold;
+    font-size: 5vh;
+    color: #4A4A4A;
+    line-height: 5vh;
+  }
 
-#enter .vs-title h3{
-  font-family: PingFangTC-Semibold;
-  font-size: 49.22px;
-  color: #4A4A4A;
-  line-height: 69px;
-}
+  #enter .vs-title h4{
+    font-family: PingFangTC-Semibold;
+    font-size: 32.72px;
+    color: #4A4A4A;
+    line-height: 46px;
+    /* The document: */
+    font-family: AvenirNext-Regular;
+    font-size: 21.95px;
+    color: #4A4A4A;
+    line-height: 30px;
 
-#enter .vs-title h4{
-  font-family: PingFangTC-Semibold;
-  font-size: 32.72px;
-  color: #4A4A4A;
-  line-height: 46px;
-  /* The document: */
-  font-family: AvenirNext-Regular;
-  font-size: 21.95px;
-  color: #4A4A4A;
-  line-height: 30px;
+  }
 
-}
+  .vs-title-group{
+    padding-bottom: 4em;
+  }
 
-#thumbnail {
-  height:20em;
-}
+  #burnt {
 
-#thumbnail a img {
+  }
+
+  #profiles{
+    font-size:1.5em;
+    position: relative;
+  }
+  #profiles i.icon.man{
+    /*font-size:3em;*/
+    color:blue;
+  }
+  #profiles i.icon.woman{
+    /*font-size:2em;*/
+    color:red;
+  }
+  #thumbnail a img {
     display : block;
     margin : auto;
-}
+    min-height:20vh;
+    max-width:60vw;
+    max-height:40vh;
+    padding-bottom:3vh;
+  }
 
-#result img {
-  width: 100%
-}
+  .check-result{
+    padding:3vh 0 10vh 0;
+  }
 
-/* Button Background: */
-.check {
-  background-image: linear-gradient(-180deg, #FF8A8D 100%, #B3B3B3 100%);
-  /*border: 1px solid #979797;*/
-  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.20), inset 0px 2px 0px 0px #FFFFFF;
-  /*border-radius: 6px;*/
-  /* OK: */
-  font-family: PingFangTC-Medium;
-  font-size: 24.39px;
-  color: #FFFFFF;
-  line-height: 34px;
-}
+  #result{
+    position:relative;
+    background: url("img/athlete_ckh.jpg");
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position:center;
+    min-height:100vh;
+    min-width:30vh
+  }
 
-#result .desc{
-  font-family: PingFangTC-Ultralight;
-  position: absolute;
-  color:white;
-  font-weight: 600;
-}
+  #result img {
+    width: 100%;
+  }
 
-#result .desc .details{
-  font-size: 3em;
-}
+  #result .desc{
+    font-family: PingFangTC-Ultralight;
+    color:white;
+  }
+  #result .athlete-title-container{
+    position: absolute;
+    top:10vh;
+  }
 
-#result .result-container .desc{
-  padding:0 0 0 5em;
-}
+  #result .details{
+    position: absolute;
+    bottom: 10vh;
+    font-size: 6vmin;
+  }
+
+  #result .details p{
+    line-height:5vh;
+    font-weight: 600;
+  }
+
+  #result .result-container .desc{
+    padding:0 0 0 3vh;
+  }
+
+  #motivation .desc{
+    font-size: 4vmin;
+    line-height: 4vmin;
+  }
+
+  #motivation {
+    padding-bottom:10vmin;
+  }
+
+  /* Button Background: */
+  .check {
+    background-image: linear-gradient(-180deg, #FF8A8D 100%, #B3B3B3 100%);
+    /*border: 1px solid #979797;*/
+    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.20), inset 0px 2px 0px 0px #FFFFFF;
+    /*border-radius: 6px;*/
+    /* OK: */
+    font-family: PingFangTC-Medium;
+    font-size: 24.39px;
+    color: #FFFFFF;
+    line-height: 34px;
+  }
 
 
-#athlete-title{
-  font-family: PingFangTC-Ultralight;
-  font-size: 14em;
-  color: #FFFFFF;
-  line-height: 90px;
-  font-weight: 100;
-}
+  #athlete-title{
+    font-family: PingFangTC-Ultralight;
+    font-size: 20vmin;
+    color: #FFFFFF;
+    /*line-height: 90vh;*/
+    font-weight: 100;
+    text-shadow: 0.1vh 0em 0em #000000;
+    padding-bottom: 20vmin;
 
-</style>
-<body >
-  <!-- <div id="example"></div> -->
-  <section id="enter">
-    <div id="thumbnail" >
-      <a href="#">
+  }
+
+  #motivation{
+    min-height:100vh;
+  }
+  #motivation .container{
+    padding-top:10vh;
+  }
+  /*#motivation h3{
+    font-size:7vmin;
+  }
+  #motivation h4{
+    font-size:6vmin;
+  }*/
+
+  #fslogo{
+    max-width:60vmin;
+  }
+  .fslogo-container{
+    text-align:center;
+  }
+  #fsevent_pic{
+    width:100%;
+    min-height:20vmax;
+    max-height:10vmin
+  }
+
+  </style>
+  <body >
+    <!-- <div id="example"></div> -->
+    <section id="enter">
+      <div id="thumbnail" >
+        <a href="#">
           <!--image here-->
-          <img src="img/fs_ckh.jpg" height="100%" alt="artist" />
-      </a>
-    </div>
-    <div class="vs-title">
-      <h3>你 vs 陳家豪</h4>
-      <h4>陳家豪幾耐就消耗你上星期的卡路里？</h5>
-    </div>
+          <img src="img/fs_ckh.jpg" alt="artist" />
+        </a>
+      </div>
+      <div class="vs-title ui container">
+        <div class="vs-title-group">
+          <h3>你 vs 陳家豪</h4>
+            <h4>陳家豪幾耐就消耗你上星期的卡路里？</h4>
+          </div>
 
-    <a href="#result"> <button type="button" class="check">睇結果</button></a>
-  </section>
+          <h4 class="ui horizontal divider header">
+            <i class="tag icon"></i>
+            你似咩人？
+          </h4>
+          <div id="profiles" class="ui four column stackable relaxed grid">
+            <div class="column">
+              <div class="ui centered card">
+                <div class="content">
+                  <div class="header">運動型壯男</div>
+                  <div class="meta">
+                    <!-- <span class="right floated time">50歲</span> -->
+                    <span class="category">行山6小時/星期</span>
+                  </div>
+                </div>
+                <div class="extra content">
+                  <div class="right floated author">
+                    <i class="man icon"></i>男 22歲 75kg
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ui vertical divider">或</div>
+            <div class="column">
+              <div class="ui centered card">
+                <div class="content">
+                  <div class="header">妙齡OL</div>
+                  <div class="meta">
+                    <span class="category">游泳1小時/星期</span>
+                  </div>
+                </div>
+                <div class="extra content">
+                  <div class="right floated author">
+                    <i class="woman icon"></i>女 25歲 65kg
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ui vertical divider">或</div>
+            <div class="column">
+              <div class="ui centered card">
+                <div class="content">
+                  <div class="header">健康中佬</div>
+                  <div class="meta">
+                    <!-- <span class="right floated time">50歲</span> -->
+                    <span class="category">3次30分鐘慢跑 /星期<br/>
+                    </span>
+                  </div>
+                </div>
+                <div class="extra content">
+                  <div class="right floated author">
+                    <i class="man icon"></i>男 50歲 70kg
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="ui centered card">
+                <div class="content">
+                  <div class="header">青春常駐少婦</div>
+                  <div class="meta">
+                    <span class="category">游泳1小時/星期</span>
+                  </div>
+                </div>
+                <div class="extra content">
+                  <div class="right floated author">
+                    <i class="woman icon"></i>女 40歲 65kg
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h4 class="ui horizontal divider header">
+            <i class="tag icon"></i>
+            消耗
+          </h4>
+          <div class="">
+            <div class="ui input massive">
+              <input id="burnt" type="text" placeholder="卡路里">
+            </div>
+          </div>
 
-  <section id="result" >
-    <div id="result-container" class="result-container">
+        </div>
+
+        <div class="check-result">
+          <a href="#result"> <button type="button" class="check">睇結果</button></a>
+        </div>
+      </section>
+
+      <section id="result" >
+        <div id="result-container" class="result-container">
           <!--image here-->
           <div class="desc">
-            <h2 id="athlete-title">陳家豪</h2>
+            <div class="athlete-title-container">
+              <h2 id="athlete-title">陳家豪</h2>
+            </div>
             <div class="details">
               <p>
                 只需要做...
               </p>
               <p>3 分鐘運動</p>
-                <p>
-                  就消耗你上星期的卡路里
-                </p>
-                    <!-- <a href="#result"> <button type="button" >你都可以XXX</button></a> -->
+              <p>
+                就消耗你上星期的卡路里
+              </p>
+              <!-- <a href="#result"> <button type="button" >你都可以XXX</button></a> -->
+            </div>
+            <!-- <img src="img/athlete_ckh.jpg" height="100%" alt="artist"  /> -->
+          </div>
+        </div>
+      </section>
+      <section id="motivation">
+        <div class="ui container">
+          <div class="ui grid">
+            <div class="row">
+              <div class="ui centered ten wide column">
+                <h2>好多人其實可以做更加多運動！！</h2>
+              </div>
+            </div>
+            <div class="ui centered twelve wide column">
+              <p><h4>游泳一小時可以燃燒100kCal = 1籠燒賣</h4></p>
+              <div class="desc">
+                如果你參加Foodsport既活動，消耗的卡路里仲可以順道捐助予有需要嘅人！
+                仲等？去<a href="http://www.foodsport.com.hk/">Foodsport</a>網站睇下啦。
+              </div>
+            </div>
+            <div class="row">
+              <div class="ui centered sixteen wide column">
+                <img id="fsevent_pic" src="https://static.wixstatic.com/media/c91a9b_45623583cf25482d80298e94e2fb4e6d.jpg/v1/fill/w_1176,h_360,al_c,lg_1,q_85/c91a9b_45623583cf25482d80298e94e2fb4e6d.jpg"></img>
+              </div>
+            </div>
+            <div class="row">
+              <div class="ui centered twelve wide column">
+                <div class="fslogo-container">
+                  <img id="fslogo" src="https://static.wixstatic.com/media/c91a9b_3cae63260de23a753d08cb647f9e4512.png/v1/fill/w_520,h_203,al_c,usm_0.66_1.00_0.01/c91a9b_3cae63260de23a753d08cb647f9e4512.png"></img>
+                </div>
+              </div>
             </div>
 
-        </div>
-          <img src="img/athlete_ckh.jpg" height="100%" alt="artist"  />
-    </div>
-  </section>
 
-  <section>
-    <img src="athlete_ckh.jpg"></img>
-  </section>
-  Testing
-<script src="main.js"></script></body>
-</html>
+          </div>
+        </div>
+      </section>
+    <script src="main.js"></script></body>
+    </html>
