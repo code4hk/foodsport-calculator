@@ -9,6 +9,7 @@ var path = require('path');
 // var envConfig = require(configPath);
 // console.log("using config path:"+configPath);
 
+var SpritesmithPlugin = require('webpack-spritesmith');
 
 module.exports = {
   entry: './src/app/index.jsx',
@@ -27,7 +28,9 @@ module.exports = {
       },
       { test: /\.css$/, loader: "style-loader!css-loader" },
       { test: /\.png$/, loader: "url-loader?limit=100000" },
-        { test: /\.(woff(2)?|eot|svg|ttf)$/, loader: "url-loader?limit=100000" },
+      { test: /\.(woff(2)?|eot|svg|ttf)$/, loaders: [
+        "url-loader?limit=100000"
+      ] },
       { test: /\.jpg$/, loader: "file-loader" },
       {test: /\.js$/, loader: 'babel'}
     ]
@@ -45,7 +48,24 @@ module.exports = {
     title: 'FoodSport',
     template: 'index.ejs', // Load a custom template
     // inject: 'body' // Inject all scripts into the body
-  })]
-  //for DEV only TODO another config for PRD
-  // devtool:"eval"
+  }),
+  new SpritesmithPlugin({
+    src: {
+      cwd: path.resolve(__dirname, 'img/avatar'),
+      glob: '*.png'
+    },
+    target: {
+      image: path.resolve(__dirname, 'src/spritesmith-generated/sprite.png'),
+      css: [[path.resolve(__dirname, 'src/spritesmith-generated/sprite.css'),{
+        format: 'css'
+      }]
+    ]
+  },
+  apiOptions: {
+    cssImageRef: "sprite.png"
+  }
+})
+]
+//for DEV only TODO another config for PRD
+// devtool:"eval"
 }
