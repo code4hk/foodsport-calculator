@@ -1,5 +1,15 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var path = require('path');
+
+
+// var configPath = './config/dev.js';
+// if (process.env.NODE_ENV === 'prd') {
+//   configPath = './config/prd.js';
+// }
+// var envConfig = require(configPath);
+// console.log("using config path:"+configPath);
+
+
 module.exports = {
   entry: './src/app/index.jsx',
   output: {
