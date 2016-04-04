@@ -32,7 +32,7 @@ module.exports = {
     extensions: ['', '.js', '.jsx']
   },
   plugins: [new HtmlWebpackPlugin({
-    // title: 'Custom template',
+    title: 'FoodSport',
     template: 'index.ejs', // Load a custom template
     // inject: 'body' // Inject all scripts into the body
   })]
