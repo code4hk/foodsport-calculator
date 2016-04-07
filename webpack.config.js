@@ -21,18 +21,26 @@ module.exports = {
   },
   module: {
     loaders: [
+      // {
+      //   //tell webpack to use jsx-loader for all *.jsx files
+      //   test: /\.jsx$/,
+      //   loader: 'jsx-loader?insertPragma=React.DOM&harmony'
+      // },
       {
-        //tell webpack to use jsx-loader for all *.jsx files
-        test: /\.jsx$/,
-        loader: 'jsx-loader?insertPragma=React.DOM&harmony'
-      },
+  test: /\.(js|jsx)$/,
+  exclude: /(node_modules|bower_components)/,
+  loader: 'babel',
+  query: {
+    presets: ['es2015','react']
+    // plugins: ['transform-runtime']
+  }
+},
       { test: /\.css$/, loader: "style-loader!css-loader" },
       { test: /\.png$/, loader: "url-loader?limit=100000" },
       { test: /\.(woff(2)?|eot|svg|ttf)$/, loaders: [
         "url-loader?limit=100000"
       ] },
-      { test: /\.jpg$/, loader: "file-loader" },
-      {test: /\.js$/, loader: 'babel'}
+      { test: /\.jpg$/, loader: "file-loader" }
     ]
   },
   externals: {

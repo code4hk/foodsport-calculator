@@ -1,5 +1,16 @@
-var React = require('react');
+import React , { PropTypes }  from 'react';
 var ReactDOM = require('react-dom');
+
+
+import { combineReducers, createStore } from 'redux';
+import { Provider, connect } from 'react-redux';
+// import loggingMiddleware from './loggingMiddleware';
+
+import CalorieInput from './input';
+import PickableProfile from './profile';
+
+import {PICK_PROFILE_SPORTY,PICK_PROFILE_OL,PICK_PROFILE_MIDDLEMAN,PICK_PROFILE_C9,UPDATE_CALORIES} from './actions';
+
 
 //require('normalize.css')
 require('lib/semantic/semantic.css');
@@ -12,8 +23,87 @@ require('src/spritesmith-generated/sprite.png');
 require('src/app/index.css');
 console.log("test");
 
+//Using redux is overkill here, just to try out and learn
 
+function calories(state = 0, action) {
+  switch (action.type) {
+    case PICK_PROFILE_SPORTY:
+    return 3510;
+    case PICK_PROFILE_OL:
+    return 442;
+    case PICK_PROFILE_MIDDLEMAN:
+    return 1260;
+    case PICK_PROFILE_C9:
+    return 520;
+    case UPDATE_CALORIES:
+    return action.calories;
+    default:
+    //manual entry
+    return state
+  }
+}
+
+let reducers = combineReducers({
+  calories
+})
+let store = createStore(reducers);
+
+function calculateTimeToBurn(){
+
+}
+
+//Rendering
 ReactDOM.render(
-  <h1>Hello, world!</h1>,
-  document.getElementById('example')
-);
+  <Provider store={store}>
+    <div className="ui four column stackable relaxed grid">
+      <div className="column">
+        <PickableProfile profileId={1} info={{
+            title:"運動型壯男",
+            avatarUrl:"img/avatar/sporty.png",
+            activity: "行山6小時/星期",
+            desc:"男 22歲 75kg",
+            gender:"man"
+          }}/>
+        </div>
+        <div className="ui vertical divider">或</div>
+        <div className="column">
+          <PickableProfile profileId={2} info={{
+              title:"妙齡OL",
+              avatarUrl:"img/avatar/ol.png",
+              activity: "踏單車1小時/星期",
+              desc:"女 25歲 65kg",
+              gender:"woman"
+            }}/>
+          </div>
+          <div className="ui vertical divider">或</div>
+          <div className="column">
+            <PickableProfile profileId={3} info={{
+                title:"健康中佬",
+                avatarUrl:"img/avatar/middleman.png",
+                activity: "3次30分鐘慢跑 /星期",
+                desc:"男 50歲 70kg",
+                gender:"man"
+              }}/>
+            </div>
+            <div className="ui vertical divider">或</div>
+            <div className="column">
+              <PickableProfile profileId={4} info={{
+                  title:"青春常駐少婦",
+                  avatarUrl:"img/avatar/c9.png",
+                  activity: "游泳1小時/星期",
+                  desc:"女 40歲 65kg",
+                  gender:"woman"
+                }}/>
+              </div>
+            </div>
+          </Provider>,
+          document.getElementById('profiles')
+        );
+
+
+        ReactDOM.render(
+          <Provider store={store}>
+            <CalorieInput />
+          </Provider>,
+          document.getElementById('burnt')
+        );

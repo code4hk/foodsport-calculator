@@ -15,19 +15,21 @@
   body{
     margin:0;
   }
-  #enter{
+  #intro{
     text-align: center;
     min-height: 100vh;
-    padding:10vh 0 10vh 0;
+    padding:20vh 0 10vh 0;
   }
-  #enter .vs-title h3{
+  #intro .vs-title h3{
     font-family: PingFangTC-Semibold;
     font-size: 5vh;
     color: #4A4A4A;
     line-height: 5vh;
   }
 
-  #enter .vs-title h4{
+
+
+  #intro .vs-title h4{
     font-family: PingFangTC-Semibold;
     font-size: 32.72px;
     color: #4A4A4A;
@@ -37,7 +39,16 @@
     font-size: 21.95px;
     color: #4A4A4A;
     line-height: 30px;
+  }
+  #enter h4{
+    font-size:3vh;
+    padding:3vh 0 3vh 0;
+  }
 
+  #enter{
+    text-align: center;
+    min-height: 100vh;
+    padding:10vh 10vh 10vh 10vh;
   }
 
   .vs-title-group{
@@ -63,7 +74,7 @@
   #thumbnail a img {
     display : block;
     margin : auto;
-    min-height:20vh;
+    min-height:25vh;
     max-width:60vw;
     max-height:40vh;
     padding-bottom:3vh;
@@ -128,9 +139,10 @@
     /*border-radius: 6px;*/
     /* OK: */
     font-family: PingFangTC-Medium;
-    font-size: 24.39px;
+    font-size:4vh;
     color: #FFFFFF;
-    line-height: 34px;
+    line-height: 10vh;
+    min-width: 20vh;
   }
 
 
@@ -172,8 +184,9 @@
 
   </style>
   <body >
-    <!-- <div id="example"></div> -->
-    <section id="enter">
+    <div id="example"></div>
+        <div id="example2"></div>
+    <section id="intro">
       <div id="thumbnail" >
         <a href="#">
           <!--image here-->
@@ -185,101 +198,100 @@
           <h3>你 vs 陳家豪</h4>
             <h4>陳家豪幾耐就消耗你上星期的卡路里？</h4>
           </div>
-          <h4 class="ui horizontal divider header">
-            <i class="tag icon"></i>
-            你似咩人？
-          </h4>
-          <div id="profiles" class="ui four column stackable relaxed grid">
-            <div class="column">
-              <div class="ui centered card">
-                <div class="image">
-                    <img class="profile-avatar" src="img/avatar/sporty.png"></img>
-                </div>
-                <div class="content">
-                  <div class="header">運動型壯男</div>
-                  <div class="meta">
-                    <!-- <span class="right floated time">50歲</span> -->
-                    <span class="category">行山6小時/星期</span>
-                  </div>
-                </div>
-                <div class="extra content">
-                  <div class="right floated author">
-                    <i class="man icon"></i>男 22歲 75kg
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="ui vertical divider">或</div>
-            <div class="column">
-              <div class="ui centered card">
-                <div class="image">
-                    <img class="profile-avatar" src="img/avatar/ol.png"></img>
-                </div>
-                <div class="content">
-                  <div class="header">妙齡OL</div>
-                  <div class="meta">
-                    <span class="category">踏單車1小時/星期</span>
-                  </div>
-                </div>
-                <div class="extra content">
-                  <div class="right floated author">
-                    <i class="woman icon"></i>女 25歲 65kg
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="ui vertical divider">或</div>
-            <div class="column">
-              <div class="ui centered card">
-                <div class="image">
-                    <img class="profile-avatar" src="img/avatar/middleman.png"></img>
-                </div>
-                <div class="content">
-                  <div class="header">健康中佬</div>
-                  <div class="meta">
-                    <!-- <span class="right floated time">50歲</span> -->
-                    <span class="category">3次30分鐘慢跑 /星期<br/>
-                    </span>
-                  </div>
-                </div>
-                <div class="extra content">
-                  <div class="right floated author">
-                    <i class="man icon"></i>男 50歲 70kg
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="column">
-              <div class="ui centered card">
-                <div class="image">
-                    <img class="profile-avatar" src="img/avatar/c9.png"></img>
-                </div>
-                <div class="content">
-                  <div class="header">青春常駐少婦</div>
-                  <div class="meta">
-                    <span class="category">游泳1小時/星期</span>
-                  </div>
-                </div>
-                <div class="extra content">
-                  <div class="right floated author">
-                    <i class="woman icon"></i>女 40歲 65kg
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <h4 class="ui horizontal divider header">
-            <i class="tag icon"></i>
-            消耗
-          </h4>
-          <div class="">
-            <div class="ui input massive">
-              <input id="burnt" type="text" placeholder="卡路里">
-            </div>
-          </div>
-
         </div>
-
+      </section>
+            <section id="enter">
+              <h4 class="ui horizontal divider header">
+                <!-- <i class="tag icon"></i> -->
+                你似咩人？
+              </h4>
+              <div id="profiles" >
+                <div class="column">
+                  <div class="ui centered card profile-card">
+                    <div class="image">
+                        <img class="profile-avatar" src="img/avatar/sporty.png"></img>
+                    </div>
+                    <div class="content">
+                      <div class="header">運動型壯男</div>
+                      <div class="meta">
+                        <!-- <span class="right floated time">50歲</span> -->
+                        <span class="category">行山6小時/星期</span>
+                      </div>
+                    </div>
+                    <div class="extra content">
+                      <div class="right floated author">
+                        <i class="man icon"></i>男 22歲 75kg
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ui vertical divider">或</div>
+                <div class="column">
+                  <div class="ui centered card">
+                    <div class="image">
+                        <img class="profile-avatar" src="img/avatar/ol.png"></img>
+                    </div>
+                    <div class="content">
+                      <div class="header">妙齡OL</div>
+                      <div class="meta">
+                        <span class="category">踏單車1小時/星期</span>
+                      </div>
+                    </div>
+                    <div class="extra content">
+                      <div class="right floated author">
+                        <i class="woman icon"></i>女 25歲 65kg
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ui vertical divider">或</div>
+                <div class="column">
+                  <div class="ui centered card">
+                    <div class="image">
+                        <img class="profile-avatar" src="img/avatar/middleman.png"></img>
+                    </div>
+                    <div class="content">
+                      <div class="header">健康中佬</div>
+                      <div class="meta">
+                        <!-- <span class="right floated time">50歲</span> -->
+                        <span class="category">3次30分鐘慢跑 /星期<br/>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="extra content">
+                      <div class="right floated author">
+                        <i class="man icon"></i>男 50歲 70kg
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="ui centered card">
+                    <div class="image">
+                        <img class="profile-avatar" src="img/avatar/c9.png"></img>
+                    </div>
+                    <div class="content">
+                      <div class="header">青春常駐少婦</div>
+                      <div class="meta">
+                        <span class="category">游泳1小時/星期</span>
+                      </div>
+                    </div>
+                    <div class="extra content">
+                      <div class="right floated author">
+                        <i class="woman icon"></i>女 40歲 65kg
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h4 class="ui horizontal divider header">
+                <!-- <i class="tag icon"></i> -->
+                消耗
+              </h4>
+              <div class="">
+                <div id="burnt" class="ui input massive">
+                </div>
+              </div>
         <div class="check-result">
           <a href="#result"> <button type="button" class="check">睇結果</button></a>
         </div>
