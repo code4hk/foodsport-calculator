@@ -1,7 +1,6 @@
 import { Provider, connect } from 'react-redux';
 
 const mapStateToProps = (state) => {
-  console.log(state.calories);
   return {
     value: state.calories
   }

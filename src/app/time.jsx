@@ -1,7 +1,6 @@
 import { Provider, connect } from 'react-redux';
 
 const mapStateToProps = (state) => {
-  console.log(state.calories);
   let time = (state.calories *  1080 ) /4194;
   return {
     value: parseInt(time)

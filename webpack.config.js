@@ -7,7 +7,6 @@ var path = require('path');
 //   configPath = './config/prd.js';
 // }
 // var envConfig = require(configPath);
-// console.log("using config path:"+configPath);
 
 var SpritesmithPlugin = require('webpack-spritesmith');
 

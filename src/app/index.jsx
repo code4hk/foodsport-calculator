@@ -22,7 +22,6 @@ require('src/spritesmith-generated/sprite.css');
 require('src/spritesmith-generated/sprite.png');
 
 require('src/app/index.css');
-console.log("test");
 
 //Using redux is overkill here, just to try out and learn
 
@@ -46,7 +45,6 @@ function calories(state = 0, action) {
 }
 
 function currentFoodIndex(state=0,action){
-  console.log(action);
   switch (action.type){
     case 'CREATE_FOOD_ACTION':
       return action.id
