@@ -7,10 +7,11 @@ import { Provider, connect } from 'react-redux';
 // import loggingMiddleware from './loggingMiddleware';
 
 import CalorieInput from './input';
+import TimeToBurn from './time';
 import PickableProfile from './profile';
+import Food from './food';
 
 import {PICK_PROFILE_SPORTY,PICK_PROFILE_OL,PICK_PROFILE_MIDDLEMAN,PICK_PROFILE_C9,UPDATE_CALORIES} from './actions';
-
 
 //require('normalize.css')
 require('lib/semantic/semantic.css');
@@ -25,6 +26,7 @@ console.log("test");
 
 //Using redux is overkill here, just to try out and learn
 
+//TODO encap reducers
 function calories(state = 0, action) {
   switch (action.type) {
     case PICK_PROFILE_SPORTY:
@@ -43,10 +45,37 @@ function calories(state = 0, action) {
   }
 }
 
+function currentFoodIndex(state=0,action){
+  console.log(action);
+  switch (action.type){
+    case 'CREATE_FOOD_ACTION':
+      return action.id
+    default:
+      return state
+  }
+}
+
+
 let reducers = combineReducers({
-  calories
+  calories,
+  currentFoodIndex
 })
 let store = createStore(reducers);
+
+// TODO hardcoded length, shd load from food
+let index = 0;
+setInterval(()=>{
+  index++;
+  if(index >= 2){
+    index = 0;
+  }
+
+  store.dispatch({ type: 'CREATE_FOOD_ACTION',id: index })
+},1500)
+
+
+
+
 
 function calculateTimeToBurn(){
 
@@ -101,9 +130,24 @@ ReactDOM.render(
         );
 
 
-        ReactDOM.render(
-          <Provider store={store}>
-            <CalorieInput />
-          </Provider>,
-          document.getElementById('burnt')
-        );
+ReactDOM.render(
+  <Provider store={store}>
+    <CalorieInput />
+  </Provider>,
+  document.getElementById('burnt')
+);
+
+ReactDOM.render(
+  <Provider store={store}>
+    <TimeToBurn />
+  </Provider>,
+  document.getElementById('time-to-burn')
+);
+
+
+ReactDOM.render(
+  <Provider store={store}>
+    <Food />
+  </Provider>,
+  document.getElementById('food-container')
+);

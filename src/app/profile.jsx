@@ -22,7 +22,7 @@ function pickProfile(id) {
     }
     case 4:
     return {
-      type: PICK_PROFILE_OL,
+      type: PICK_PROFILE_C9,
       id
     }
     default:

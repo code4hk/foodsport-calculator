@@ -20,9 +20,9 @@ const mapDispatchToProps = (dispatch) => {
 
 const Input = (props) => (
   <span>
-  <input type="number" defaultValue={0} value={props.value}
-    onChange={(event)=>props.onUpdateCalories(event.target.valueAsNumber)}/ >卡路里
-  </span>
+    <input type="number" defaultValue={0} value={props.value}
+      onChange={(event)=>props.onUpdateCalories(event.target.valueAsNumber)}/ >卡路里
+    </span>
   )
   // placeholder="卡路里"
   const CalorieInput = connect(
