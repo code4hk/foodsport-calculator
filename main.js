@@ -96,7 +96,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	__webpack_require__(189);
 
 	__webpack_require__(190);
-	console.log("test");
 
 	//Using redux is overkill here, just to try out and learn
 
@@ -126,7 +125,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  var state = arguments.length <= 0 || arguments[0] === undefined ? 0 : arguments[0];
 	  var action = arguments[1];
 
-	  console.log(action);
 	  switch (action.type) {
 	    case 'CREATE_FOOD_ACTION':
 	      return action.id;
@@ -1862,7 +1860,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _reactRedux = __webpack_require__(14);
 
 	var mapStateToProps = function mapStateToProps(state) {
-	  console.log(state.calories);
 	  return {
 	    value: state.calories
 	  };
@@ -1908,7 +1905,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _reactRedux = __webpack_require__(14);
 
 	var mapStateToProps = function mapStateToProps(state) {
-	  console.log(state.calories);
 	  var time = state.calories * 1080 / 4194;
 	  return {
 	    value: parseInt(time)
